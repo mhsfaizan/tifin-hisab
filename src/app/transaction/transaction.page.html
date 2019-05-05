@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let transaction of transactions">
+    <ion-label class="my-label">
+      <h2>{{transaction.date}}</h2>
+      <!-- <p *ngFor="let obj of transaction | keyvalue">
+        <span><b>{{obj.key}}</b> : {{obj.value}}</span>
+      </p> -->
+      <p>{{transaction.name}}</p>
+    </ion-label>
+  </ion-item>
+  <ion-card *ngIf="!transactions.length">
+    <ion-card-content>There is no data.</ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br />
+  <!-- <ion-grid *ngIf="calandars.length">
+    <ion-row>
+      <ion-col>
+        <b class="table-data">Date</b>
+      </ion-col>
+      <ion-col>
+        <b class="table-data">No of tiffin</b>
+      </ion-col>
+      <ion-col>
+        <b class="table-data">Involved</b>
+      </ion-col>
+      <ion-col>
+        <b class="table-data">Insert By</b>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let calandar of calandars">
+      <ion-col>
+        <span class="table-data"></span>
+      </ion-col>
+      <ion-col>
+        <span class="table-data">{{calandar.tiffin}}</span>
+      </ion-col>
+      <ion-col>
+        <span class="table-data">{{calandar.involved}}</span>
+      </ion-col>
+      <ion-col>
+        <span class="table-data">{{calandar.user[0].name}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+    <ion-card *ngFor="let calandar of calandars" class="my-card">
+      <ion-card-content>
+        <p><b>Date</b> : {{calandar.date | date}}</p>
+        <p><b>Tiffin</b> : {{calandar.tiffin}}</p>
+        <p><b>Involved</b> : {{calandar.involved}}</p>
+        <p><b>Inserted By</b> : {{calandar.user[0].name}}</p>
+        <ion-button size="small" routerLink="/edit-calendar/{{calandar.date}}/{{calandar.involved}}/{{calandar.tiffin}}">Edit</ion-button>
+      </ion-card-content>
+    </ion-card>
+  <ion-card *ngIf="!calandars.length">
+    <ion-card-content>There Is no Record.</ion-card-content>
+  </ion-card>
+</ion-content>

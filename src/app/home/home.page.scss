@@ -1,0 +1,26 @@
+.login-page{
+  height: calc(100vh - 76px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color:#eee;
+  justify-content: center;
+}
+.login-box{
+  height: 300px;
+  width: 100%;
+}
+.login-box ion-card{
+  background-color: #fff;
+}
+.page-heading{
+  text-align: center;
+}
+.page-heading>span{
+  border: 1px solid #555;
+  width: 50px;
+  display: inline-block;
+}
+.login-box ion-button{
+  margin-top: 1rem;
+}

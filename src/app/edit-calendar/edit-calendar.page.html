@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar type="indeterminate" *ngIf="isShow"></ion-progress-bar>
+  <br />
+  <ion-item>
+    <ion-label>
+      <ion-icon name="cash"></ion-icon>
+    </ion-label>
+    <ion-input placeholder="Add number of tiffin." [formControl]="tiffin" type="number"></ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let name of names;let i=index">
+      <ion-label>{{name.name}}</ion-label>
+      <ion-checkbox slot="end" checked="{{name.status}}"  (ionChange)="addItem($event.target.checked,i)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  &nbsp;&nbsp;<ion-button (click)="update()" [disabled]="!tiffin.valid">Update</ion-button>
+</ion-content>

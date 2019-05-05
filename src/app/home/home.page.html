@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-page">
+    <div class="login-box">
+      <ion-card>
+        <ion-progress-bar type="indeterminate" *ngIf="isLoggedIn"></ion-progress-bar>
+        <ion-card-header>
+          <ion-card-title>
+            <div class="page-heading">
+              <h3 class="mb-0 mt-0">Sign In</h3>
+              <span></span>
+            </div>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form [formGroup]="signForm" (submit)="signin()">
+            <ion-item> 
+              <ion-label>
+                <ion-icon name="mail"></ion-icon>
+              </ion-label>
+              <ion-input placeholder="Email" type="email" formControlName="email"  required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="key"></ion-icon>
+              </ion-label>
+              <ion-input placeholder="Password" type="password" formControlName="password" required></ion-input>
+            </ion-item>
+            <ion-button color="primary" type="submit" [disabled]="signForm.invalid">Sign In</ion-button>
+          </form>
+          <br />
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

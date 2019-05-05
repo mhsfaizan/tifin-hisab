@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-item *ngFor="let name of total | keyvalue">
+    <ion-thumbnail slot="start" >
+      <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" style="border-radius:50%;">
+    </ion-thumbnail>
+    <ion-label>
+      <h3>{{name.key}} Ko Dene Hai.</h3>
+      <p>&#2352;{{name.value}}</p>
+    </ion-label>
+  </ion-item>
+  <br/>
+  <ion-item lines="none" >
+      <ion-checkbox slot="start" (ionChange) = "this.isChechedShow = !this.isChechedShow"></ion-checkbox>
+      <ion-label style="white-space: normal;font-size:13px;">Agr hisab kr liya hai to is checkbox ko select kre aur data clear kre.</ion-label>
+  </ion-item>
+  &nbsp;&nbsp;<ion-button (click)="clearData()" *ngIf="isChechedShow">Clear Data</ion-button>
+</ion-content>
